@@ -17,8 +17,14 @@ section{
 }
 .card{
     border: solid 2px black;
+    margin: 2vh;
+    padding: 1vh;
 }
 img {
     aspect-ratio: 1/1;
     height: 10vh;
+}
+.grid-title{
+    grid-column-start: 1;
+    grid-column-end: 5;
 }
