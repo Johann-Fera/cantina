@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: gray;
+    color: black;
+    line-height: 3.0;
+}
+.main-header{
+    background-color: black;
+    color: white;
+    padding: 1vh;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.main-header > h1{
+    font-family: "Bungee", sans-serif;
+    color: yellow;
+}
+nav > ul{
+    list-style: none
+}
+ul > li{
+    display: inline;
+    margin: 10vh;
+}
+li > a{
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s ease;
+    font-family: fantasy;
+}
+li > a:hover{
+    color: yellow;
+    text-decoration: underline;
+}
