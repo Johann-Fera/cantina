@@ -1,0 +1,24 @@
+main{
+    padding: 2vh;
+    padding-left: 20vh;
+    padding-right: 20vh;
+}
+section{
+    margin-bottom: 5vh;
+    padding: 3vh;
+    background-color: wheat;
+    box-shadow: 20px 20px 20px black;
+    border-radius: 1vh;
+    text-align: center;
+}
+.ultragrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.card{
+    border: solid 2px black;
+}
+img {
+    aspect-ratio: 1/1;
+    height: 10vh;
+}
