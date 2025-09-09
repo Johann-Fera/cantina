@@ -32,18 +32,21 @@ document.addEventListener('DOMContentLoaded', () =>{
             itemcart.innerHTML = "";
             cart.forEach(produto =>{
                 const cartitem = document.createElement('div');
-                console.log("isso funfa")
                 cartitem.classList.add('cart-item');
                 cartitem.innerHTML = `
                 <span>${produto.nome}</span>
                 <span>R$ ${produto.preco.toFixed(2)}</span>
                 `
                 itemcart.appendChild(cartitem)
-                total += produto.price;
+                total += produto.preco;
             }) 
         }
         cartvalue.textContent = `R$ ${total.toFixed(2)}`;
     }
-    const 
+    const limpacart = document.getElementById('limpa-btn');
+    limpacart.addEventListener('click', () =>{
+        localStorage.removeItem('cart');
+        location.reload(true);
+    })
 
 })
