@@ -39,10 +39,24 @@ document.addEventListener('DOMContentLoaded', () =>{
                 `
                 itemcart.appendChild(cartitem)
                 total += produto.preco;
-            }) 
+            })
+
         }
         cartvalue.textContent = `R$ ${total.toFixed(2)}`;
+        checkout.addEventListener('click', ()=>{
+            console.log("this work")
+            const zap = '981628822';
+            let mensagem = "caguei"
+            cart.forEach(produto=>{
+                mensagem += `- ${produto.name} (R$ ${produto.preco.toFixed(2)})`
+            });
+            mensagem += `\n Total: R$ ${total.toFixed(2)}*`;
+            const urlzap = `https://www.youtube.com/watch?v=dQw4w9WgXcQ`
+            window.open(urlzap, '_blank');
+            localStorage.removeItem('cart');
+        });
     }
+
     const limpacart = document.getElementById('limpa-btn');
     limpacart.addEventListener('click', () =>{
         localStorage.removeItem('cart');
