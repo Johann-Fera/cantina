@@ -16,13 +16,12 @@ section{
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .card{
-    border: solid 2px black;
     margin: 2vh;
     padding: 1vh;
 }
 img {
-    aspect-ratio: 1/1;
-    height: 10vh;
+    aspect-ratio: 16/9;
+    max-width: 100%;
 }
 .grid-title{
     grid-column-start: 1;
