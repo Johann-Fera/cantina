@@ -27,7 +27,7 @@ section > div > h2{
     color: black;
 }
 .slogan{
-    background-image: url(coxinha-de-frango-com-requeijao-mini-congelada.jpg);
+    background-image: url(imagens/coxinha-de-frango-com-requeijao-mini-congelada.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -35,7 +35,7 @@ section > div > h2{
 .gente-comendo{
     height: 50vh;
     aspect-ratio: 16/9;
-    background-image: url(grupo-de-tres-estudantes-bonitos-sentado-no-refeitorio-da-universidade-almocando-falando-sobre-os-exames-de-ontem-vida-universitaria_176420-9166.jpg);
+    background-image: url(/estilo/imagens/grupo-de-tres-estudantes-bonitos-sentado-no-refeitorio-da-universidade-almocando-falando-sobre-os-exames-de-ontem-vida-universitaria_176420-9166.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     justify-self: center;
