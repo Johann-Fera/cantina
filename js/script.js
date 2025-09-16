@@ -1,23 +1,5 @@
 document.addEventListener('DOMContentLoaded', () =>{
-    const compbtn = document.querySelectorAll('.compra-btn');
-
-    compbtn.forEach(button => {
-        button.addEventListener('click', () =>{
-            const card = button.closest('.card');
-            const pname = card.getAttribute('data-nome');
-            const ppreco = parseFloat(card.getAttribute('data-price'));
-            const produto = {
-                nome: pname,
-                preco: ppreco,
-            };
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push(produto)
-            localStorage.setItem('cart',JSON.stringify(cart));
-            alert(`${pname} foi adicionado ao carrinho`)
-
-
-        })
-    })
+    fetchProduto();
     const itemcart = document.getElementById('card-items-container');
     const cartvalue = document.getElementById('card-total-value');
     const checkout = document.getElementById('checkout-btn');
@@ -61,6 +43,49 @@ document.addEventListener('DOMContentLoaded', () =>{
     limpacart.addEventListener('click', () =>{
         localStorage.removeItem('cart');
         location.reload(true);
-    })
+    });
+});
 
-})
+function fetchProduto() {
+    fetch("http://127.0.0.1:8000/api/consumiveis/")
+    .then(res => res.json())
+    .then(data => renderProdutos(data))
+    .catch(err => console.error("Erro ao buscar consumivel ", err))
+}
+function renderProdutos(consumiveis) {
+    consumiveis.forEach(consumivel => {
+        const catego = consumivel.categoria.nome.toLowerCase();
+        const container = document.getElementById(catego);
+        const card = document.createElement("div");
+        card.className = "card";
+        card.setAttribute("data-nome",consumivel.nome);
+        card.setAttribute("data-price",consumivel.preco);
+        card.innerHTML = `
+            <img src="${consumivel.imagem}" alt="${consumivel.nome}">
+            <h3>${consumivel.nome}</h3>
+            <p>R$ ${consumivel.preco}</p>
+            <button class="compra-btn">buy</button>
+        `;
+        container.appendChild(card);
+    });
+    const compbtn = document.querySelectorAll('.compra-btn');
+    compbtn.forEach(button => {
+        button.addEventListener('click', () =>{
+            console.log("funfa aqui");
+            
+            const card = button.closest('.card');
+            const pname = card.getAttribute('data-nome');
+            const ppreco = parseFloat(card.getAttribute('data-price'));
+            const produto = {
+                nome: pname,
+                preco: ppreco,
+            };
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(produto)
+            localStorage.setItem('cart',JSON.stringify(cart));
+            alert(`${pname} foi adicionado ao carrinho`)
+
+
+        });
+    });
+};

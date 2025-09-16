@@ -23,7 +23,3 @@ img {
     aspect-ratio: 16/9;
     max-width: 100%;
 }
-.grid-title{
-    grid-column-start: 1;
-    grid-column-end: 5;
-}
